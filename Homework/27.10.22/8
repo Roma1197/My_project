@@ -1,0 +1,95 @@
+def symbols_length():
+    password_length = input('Please enter the password length from 4 to 16\n')
+    while True:
+        if not password_length.isdigit():
+            password_length = input('Please enter the password length from 4 to 16\n')
+        else:
+            if int(password_length) in range(4, 17):
+                typed_number = int(password_length)
+                break
+            else:
+                password_length = input('Please enter the password length from 4 to 16\n')
+    used_symbols = ''
+
+def symbols_lowercase():
+    lowercase = input('Do you want to use alphabet in lowercase? (y/n)')
+    while True:
+        if lowercase in ['Y', 'y', 'N', 'n']:
+            if lowercase in ['Y', 'y']:
+                used_symbols = used_symbols + string.ascii_lowercase
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+            else:
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+        else:
+            lowercase = input('You specified wrong answer. Do you want to use alphabet in lowercase? (y/n)')
+
+def symbols_uppercase():
+    uppercase = input('Do you want to use alphabet in uppercase? (y/n)')
+    while True:
+        if uppercase in ['Y', 'y', 'N', 'n']:
+            if uppercase in ['Y', 'y']:
+                used_symbols = used_symbols + string.ascii_uppercase
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+            else:
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+        else:
+            uppercase = input('You specified wrong answer. Do you want to use alphabet in uppercase? (y/n)')
+
+def symbols_numbers():
+    numbers = input('Do you want to use numbers? (y/n)')
+    while True:
+        if numbers in ['Y', 'y', 'N', 'n']:
+            if numbers in ['Y', 'y']:
+                used_symbols = used_symbols + string.digits
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+            else:
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+        else:
+            numbers = input('You specified wrong answer. Do you want to use numbers? (y/n)')
+
+def symbols_punctuation():
+    punctuation = input('Do you want to use punctuation? (y/n)')
+    while True:
+        if punctuation in ['Y', 'y', 'N', 'n']:
+            if punctuation in ['Y', 'y']:
+                used_symbols = used_symbols + string.punctuation
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+            else:
+                print(f'Your possible symbols at the moment: {used_symbols}')
+                break
+        else:
+            punctuation = input('You specified wrong answer. Do you want to use punctuation? (y/n)')
+
+
+def password_generator():
+    import random
+    import string
+    password_length = input('Please enter the password length from 4 to 16\n')
+    symbols_length()
+    used_symbols = ''
+    lowercase = input('Do you want to use alphabet in lowercase? (y/n)')
+    symbols_lowercase()
+    uppercase = input('Do you want to use alphabet in uppercase? (y/n)')
+    symbols_uppercase()
+    numbers = input('Do you want to use numbers? (y/n)')
+    symbols_numbers()
+    punctuation = input('Do you want to use punctuation? (y/n)')
+    symbols_punctuation()
+    counter = 0
+    result_password = ''
+    if len(used_symbols) > 0:
+        while counter < typed_number:
+            result_password = result_password + random.choice(used_symbols)
+            counter += 1
+        else:
+            print(f'Your password is:\n{result_password}')
+    else:
+        print("You did not want to use any options, therefore, your password is empty")
+password_generator()

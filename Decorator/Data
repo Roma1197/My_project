@@ -1,0 +1,26 @@
+with open('log.txt', 'w') as file_object:
+    say = file_object.read()
+
+
+
+from functools import wraps
+
+def decorator_log(func):
+    @wraps(func)
+    def wrapper():
+        with open('log.txt', 'w') as file_object:
+            file_object.write(say.__name__)
+    return decorator_log
+
+def my_decorator1(func):
+    @wraps(func)
+    def wrapper():
+        print("Before call")
+        func()
+        print("After call")
+    return my_decorator1
+
+@my_decorator1
+def say():
+    print("My name is Nick")
+    say()

@@ -1,0 +1,12 @@
+zoo = [
+      ['monkey', 'tiger', 'elephant'],
+      ['frog', 'snake'],
+      ['owl', 'pigeon'],
+      ['hamster', 'mouse', 'hedgehog']
+      ]
+for section in zoo:
+    for animal in section:
+        if "a" in animal:
+            print(animal)
+
+

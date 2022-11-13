@@ -1,0 +1,26 @@
+import time
+
+def time_function(f):
+   def wrapper(*args, **kwargs):
+       start = time.time()
+       result = f(*args, **kwargs)
+       end = time.time()
+       print(str((end - start)*1000) + "ms")
+       return result
+   return wrapper
+
+
+@time_function
+def nothing_function():
+    pass
+
+
+function1 = nothing_function()
+print(function1)
+
+
+
+
+
+
+

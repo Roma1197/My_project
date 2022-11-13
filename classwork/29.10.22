@@ -1,0 +1,8 @@
+import datetime
+date_time = "05/10/2022 19:00"
+format_date = "%d/%m/%Y %H:%M"
+object_datetime = datetime.datetime.strptime(date_time, format_date)
+format_otherdate = "%b %d, %y %I:%M %p"
+print(object_datetime.strftime(format_otherdate))
+
+

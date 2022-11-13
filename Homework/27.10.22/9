@@ -1,0 +1,9 @@
+class animal:
+    def __init__ (self, kind, height):
+        self. kind = kind
+        self. height = height
+    k = input('Kind animal')
+    h = int(input('Height'))
+    a1 = Animal(k, h)
+    print('Kind – ', a1.kind, 'Height – ')
+

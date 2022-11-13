@@ -1,0 +1,14 @@
+matrix = [
+         [1,2,3],
+         [4,5,6],
+         [7,8,9]
+         ]
+index = 1
+matrix_all = matrix[0]
+while index < len(matrix):
+    matrix_all.extend(matrix[index])
+    index += 1
+number = 0
+while number < 3:
+    print(matrix_all[number:3:4] + matrix_all[number+3:6:4] + matrix_all[number+6:9:4])
+    number += 1
