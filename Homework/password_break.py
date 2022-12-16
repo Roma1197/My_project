@@ -25,18 +25,20 @@ def time_counter(f):
         start = time.time()
         result = f(*args, **kwargs)
         end = time.time()
-        print(f.__name__ + ' time taken ' + str(end - start) + ' seconds')
+        print(f.__name__ + ' time taken ' + str((end - start)*1000) + ' ms')
         return result
     return wrapper
 
 @time_counter
 def password_break(i):
     '''Cracks the password generated above'''
-    for i in range(1, 100000000):
-        if i == correct_password:
-            print(f"{i} is correct")
+    for i in range(1, 10):
+        if i == char:
             break
 
-correct_password = int(password)
-password_copy = password_break(correct_password)
-print(password_copy)
+for n in range(0, len(password)):
+    char = int(password[n])
+    print(f"{char}")
+
+correct_password = password_break(char)
+print(correct_password)
